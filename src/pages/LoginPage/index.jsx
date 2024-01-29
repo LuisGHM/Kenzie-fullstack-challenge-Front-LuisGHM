@@ -4,7 +4,7 @@ export const LoginPage = () => {
     return(
         <>
             <main>
-                <LoginForm/>
+                {/* <LoginForm/> */}
             </main>
         </>
     )
