@@ -1,9 +1,10 @@
-import { HeaderHeader } from "../../components/form/header/HomeHeader"
+import { HomeHeader } from "../../components/header/HomeHeader"
+
 
 export const HomePage = () => {
     return (
         <>
-            <HeaderHeader/>
+            <HomeHeader/>
             <main>
                 
             </main>

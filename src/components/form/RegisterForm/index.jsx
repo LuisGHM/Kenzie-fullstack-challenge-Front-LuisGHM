@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import { registerFormSchema } from "./registerFormSchema"
 import { Input } from "../input";
 import { Link } from "react-router-dom";
+import styles from "./style.module.scss";
 
 export const RegisterForm = () => {
     const {register, handleSubmit, formState: {errors},} = useForm({
@@ -14,9 +15,9 @@ export const RegisterForm = () => {
       };
 
       return(
-        <div>
-            <form onSubmit={handleSubmit(submit)}>
-                <h2>Crie sua conta</h2>
+        <div className={`${styles.formContainer} container`}>
+            <form className={`form`} onSubmit={handleSubmit(submit)}>
+                <h2 className={`alignCenter`}>Crie sua conta</h2>
                 <Input
                 className="input"
                 type="text"
@@ -49,8 +50,8 @@ export const RegisterForm = () => {
                 {...register("telephone")}
                 error={errors.telephone}
                 />
-                <button>Cadastrar</button>
-                <Link to={"/"}>Voltar</Link>
+                <button className={`btn`}>Cadastrar</button>
+                <Link className={`btn grey`} to={"/"}>Voltar</Link>
                 </form>
         </div>
       )

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export const HeaderHeader = () => {
+export const HomeHeader = () => {
     return (
         <header>
             <div>
