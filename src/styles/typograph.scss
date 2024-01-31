@@ -1,3 +1,36 @@
+.title1, h1{
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.title2, h2{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.headline{
+    font-weight: normal;
+    font-size: .75rem;
+    color: var(--grey-0);
+    
+    &.bold{
+        font-weight: bold;
+    }
+    
+    &.grey1{
+        color: var(--grey-1);
+    }
+
+    &.grey2{
+        color: var(--grey-2);
+    }
+}
+
+.paragraph{
+    font-weight: normal;
+    font-size: 1rem;
+}
+
 .alignCenter{
     align-self: center;
 }

@@ -1,0 +1,18 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.btn{
+    max-width: 65px;
+    font-size: 1rem;
+    background-color: var(--color-primary);
+}
+
+.line{
+    border-bottom: 1px solid black;
+}

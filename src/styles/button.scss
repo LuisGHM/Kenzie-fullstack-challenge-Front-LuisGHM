@@ -50,4 +50,12 @@
             background-color: var(--grey-3);
         }
     }
+
+    &.blue{
+        background-color: var(--color-primary);
+
+        &:hover{
+            background-color: var(--color-primary-negative);
+        }
+    }
 }

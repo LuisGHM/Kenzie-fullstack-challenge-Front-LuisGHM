@@ -1,0 +1,21 @@
+.btn{
+    max-width: 32px;
+    max-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.headerSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.section{
+    background: #c4d8e7;
+    border-radius: 10px; 
+}

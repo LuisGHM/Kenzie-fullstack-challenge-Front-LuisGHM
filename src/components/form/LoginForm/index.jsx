@@ -21,7 +21,7 @@ export const LoginForm = () => {
                 <Input className={`input`} type="email" label={"Email"} placeholder="Digite aqui seu email"  {...register("email")} error={errors.email}/>
                 <Input className={`input`} type="password" label={"Senha"} placeholder="Digite aqui sua senha"  {...register("password")} error={errors.password}/>
                 <button className={`btn`} type="submit">Entrar</button>
-                <span className={`alignCenter`}>Ainda não possui uma conta?</span>
+                <span className={`headline bold grey2 alignCenter`}>Ainda não possui uma conta?</span>
                 <Link className={`btn grey`} to="/register">Cadastrar-se</Link>
             </form>
         </div>

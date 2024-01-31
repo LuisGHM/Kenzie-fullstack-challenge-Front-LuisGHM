@@ -1,3 +1,4 @@
+import { ContactList } from "../../components/ContactsList"
 import { HomeHeader } from "../../components/header/HomeHeader"
 
 
@@ -6,7 +7,7 @@ export const HomePage = () => {
         <>
             <HomeHeader/>
             <main>
-                
+                <ContactList/>
             </main>
         </>
     )

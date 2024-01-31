@@ -1,0 +1,36 @@
+.card{
+    background-color: var(--color-primary-focus);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 17px;
+    border-radius: 10px;
+}
+
+.cardHeader{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    max-width: 32px;
+    max-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.btns{
+    display: flex;
+    gap: 10px;
+}
+
+@media (min-width: 470px) {
+    .cardHeader{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap:20px;
+    }
+}
