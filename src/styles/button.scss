@@ -1,0 +1,53 @@
+.btn{
+    background-color: var(--color-primary);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+    &:hover{
+        background-color: var(--color-primary-focus);
+    }
+
+    &:disabled{
+        background-color: var(--color-primary-negative);
+    }
+
+    &.grey{
+        background-color: var(--grey-1);
+
+        &:hover{
+            background-color: var(--grey-2);
+        }
+    }
+
+    &.grey1{
+        background-color: var(--grey-2);
+        color: var(--grey-1);
+
+        &:hover{
+            color: var(--grey-0);
+        }
+    }
+
+    &.grey2{
+        background-color: var(--grey-3);
+
+        &:hover{
+            background-color: var(--grey-2);
+        }
+    }
+
+    &.grey3{
+        background-color: var(--grey-4);
+
+        &:hover{
+            background-color: var(--grey-3);
+        }
+    }
+}

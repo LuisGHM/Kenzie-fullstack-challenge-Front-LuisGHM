@@ -1,7 +1,12 @@
+import { HeaderHeader } from "../../components/form/header/HomeHeader"
+
 export const HomePage = () => {
     return (
         <>
-            <h1>HomePage</h1>
+            <HeaderHeader/>
+            <main>
+                
+            </main>
         </>
     )
 }
