@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
 import { jwtDecode } from "jwt-decode";
@@ -6,8 +6,31 @@ import { jwtDecode } from "jwt-decode";
 export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState()
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const getUser = async () => {
+          const token = localStorage.getItem("@TOKEN");
+          if (token) {
+            try {
+                const decodedToken = jwtDecode(token);
+               const { data } = await api.get(`/clients/email/${decodedToken.email}`, {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              });
+              navigate("/home");
+              setUser(data); 
+            } catch (error) {
+              console.log("Token inspirado");
+              setUser(null);
+              navigate("/");
+            }
+          }
+        };
+        getUser();
+      }, []);
 
     const userLogin = async (formData) => {
         try{
