@@ -4,14 +4,18 @@ import { loginFormSchema } from "./loginFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
 import styles from "./style.module.scss";
+import { useContext } from "react";
+import { UserContext } from "../../../providers/userContext";
 
 export const LoginForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(loginFormSchema)
     });
+
+    const { userLogin } = useContext(UserContext)
     
     const submit = (formData) => {
-        console.log(formData);
+        userLogin(formData);
     }
 
     return (
