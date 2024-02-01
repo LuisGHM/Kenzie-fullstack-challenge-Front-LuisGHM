@@ -27,11 +27,23 @@ export const UserProvider = ({ children }) => {
         setUser(null);
         navigate("/");
         localStorage.removeItem("@TOKEN");
-      };
+    };
+
+    const userRegister = async (formData) => {
+        try {
+            await api.post("/clients", formData);
+            navigate("/")
+            console.log("Usuario cadastrado com sucesso");
+        } catch (error) {
+            if (error.response.data.message === "Email already exists") {
+                console.log("O email já existe");
+              }
+        }
+    }
 
     return (
         <UserContext.Provider
-          value={{ setUser, user, userLogin, logout }}
+          value={{ setUser, user, userLogin, logout, userRegister }}
         >
           {children}
         </UserContext.Provider>

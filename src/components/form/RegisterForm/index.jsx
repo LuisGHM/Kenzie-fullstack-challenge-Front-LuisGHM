@@ -4,15 +4,19 @@ import { registerFormSchema } from "./registerFormSchema"
 import { Input } from "../input";
 import { Link } from "react-router-dom";
 import styles from "./style.module.scss";
+import { UserContext } from "../../../providers/userContext";
+import { useContext } from "react";
 
 export const RegisterForm = () => {
     const {register, handleSubmit, formState: {errors},} = useForm({
-        resolver: zodResolver(registerFormSchema)
+      resolver: zodResolver(registerFormSchema)
     });
 
+    const { userRegister } = useContext(UserContext);
+
     const submit = (formData) => {
-        console.log(formData);
-      };
+      userRegister(formData);
+    };
 
       return(
         <div className={`${styles.formContainer} container`}>
