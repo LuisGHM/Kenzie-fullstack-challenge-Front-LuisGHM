@@ -94,9 +94,9 @@ export const ContactProvider = ({ children }) => {
         if (error.response?.data.message === "Contact not found") {
           toast.error("Contato não encontrado");
         } else if (error.response?.data.message === "A contact with this email already exists") {
-          toast.error("Um contato com esse e-mail já existe");
+          toast.error("Esse email já existe na sua lista de contatos");
         } else if (error.response?.data.message === "A contact with this telephone already exists") {
-          toast.error("Um contato com esse telefone já existe");
+          toast.error("Esse telefone já existe na sua lista de contatos");
         }
       }
     });
