@@ -6,7 +6,7 @@ import { ContactContext } from "../../../providers/contactContext";
 
 export const ContactCard = ({ contact }) => {
 
-    const { contactDelete } = useContext(ContactContext)
+    const { contactDelete, setEditingContact } = useContext(ContactContext)
 
     return (
         <>
@@ -16,7 +16,7 @@ export const ContactCard = ({ contact }) => {
                     <h3 className={`headline grey2`}>{contact.email} | {contact.telephone}</h3>
                 </div>
                 <div className={`${styles.btns}`}>
-                    <button className={`${styles.btn} btn blue`}><BiPencil/></button>
+                    <button className={`${styles.btn} btn blue`} onClick={() => setEditingContact(contact)}><BiPencil/></button>
                     <button className={`${styles.btn} btn blue`} onClick={() => contactDelete.mutate(contact)}><BsFillTrash3Fill/></button>
                 </div>
             </div>

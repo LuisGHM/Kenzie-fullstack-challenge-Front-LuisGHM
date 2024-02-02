@@ -16,10 +16,10 @@ export const ContactList = () => {
             <button onClick={() => setisOpenAdd(true)} className={`${styles.btn} btn grey`}><FiPlus/></button>
          </div>
          <ul className={`${styles.section} container`}>
-            {contactList !== undefined && contactList !== 0 ? (
+            {contactList && contactList.length > 0 ? (
                contactList.map((item) => <ContactCard key={item.id} contact={item} />)
                ) : (
-               <h3>Você não tem nenhuma contato em sua lista</h3>
+               <h3>Você não tem nenhum contato em sua lista </h3>
             )}
          </ul>
       </div>

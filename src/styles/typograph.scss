@@ -24,6 +24,10 @@
     &.grey2{
         color: var(--grey-2);
     }
+
+    &.error{
+        color: red;
+    }
 }
 
 .paragraph{

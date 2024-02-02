@@ -6,7 +6,7 @@ export const Input = forwardRef(({error, label, asside, ...rest}, ref) =>{
         <div className={`${styles.container}`}>
             <label className="alignCenter">{label}</label>
             <input ref={ref} {...rest} />
-            {error ? <span>{error.message}</span> : null}
+            {error ? <span className="headline error alignCenter">{error.message}</span> : null}
         </div>
     )
 });

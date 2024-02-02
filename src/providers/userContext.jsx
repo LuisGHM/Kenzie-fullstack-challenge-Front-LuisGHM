@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../services/api";
 import { jwtDecode } from "jwt-decode";
+import toast from "react-hot-toast";
 
 export const UserContext = createContext({});
 
@@ -25,7 +26,7 @@ export const UserProvider = ({ children }) => {
               setContacts(data.contacts) 
               navigate("/home");
             } catch (error) {
-              console.log("Token inspirado");
+              toast.error("Token inspirado");
               setUser(null);
               navigate("/");
             }
@@ -39,12 +40,12 @@ export const UserProvider = ({ children }) => {
             const { data } = await api.post("/login", formData);
             localStorage.setItem("@TOKEN", data.token);
             setUser(data.user);
-            console.log("Logado com sucesso");
+            toast.success("Logado com sucesso");
             navigate("/home")
         } catch (error) {
             if (error.response?.data.message === "Invalid email or password") {
-                console.log("Senha ou email ivalidos");
-              }
+                toast.error("Senha ou email ivalidos");
+            }
         }
     }
 
@@ -58,11 +59,15 @@ export const UserProvider = ({ children }) => {
         try {
             await api.post("/clients", formData);
             navigate("/")
-            console.log("Usuario cadastrado com sucesso");
+            toast.success("Usuario cadastrado com sucesso");
         } catch (error) {
-            if (error.response.data.message === "Email already exists") {
-                console.log("O email já existe");
-              }
+            if (error.response.data.message === "A client with this email and telephone already exists") {
+              toast.error("Um cliente com esse e-mail e telefone já existe");
+            } else if (error.response.data.message === "A client with this email already exists") {
+              toast.error("Um cliente com esse e-mail já existe");
+            } else if (error.response.data.message === "A client with this telephone already exists") {
+              toast.error("Um cliente com esse telefone já existe");
+            }
         }
     }
 
