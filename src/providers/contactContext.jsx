@@ -48,10 +48,10 @@ export const ContactProvider = ({ children }) => {
           toast.success("Contato criado com sucesso")  
       },
       onError: (error) => {
-        if (error.response?.data.message === "A contact with this email already exists") {
-          toast.error("um contato com esse email já existe");
-        } else if (error.response?.data.message === "A contact with this telephone already exists") {
-          toast.error("Um contato com esse telefone já existe");
+        if (error.response?.data.message === "A contact with this email already exists in you contact list") {
+          toast.error("Esse email já existe na sua lista de contatos");
+        } else if (error.response?.data.message === "A contact with this telephone already exists in you contact list") {
+          toast.error("Esse telefone já existe na sua lista de contatos");
         } else if (error.response?.data.message[0] === "email must be an email") {
           toast.error("Você deve informar um e-mail valido");
         }
