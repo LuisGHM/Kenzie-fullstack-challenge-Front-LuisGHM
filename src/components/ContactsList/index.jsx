@@ -3,22 +3,21 @@ import { FiPlus } from "react-icons/fi";
 import styles from "./style.module.scss"
 import { ContactCard } from "./ContactCard";
 import { UserContext } from "../../providers/userContext";
+import { ContactContext } from "../../providers/contactContext";
 
 export const ContactList = () => {
 
-   const { user } = useContext(UserContext);
-
-   const contacts = user?.contacts;
+   const { setisOpenAdd, contactList } = useContext(ContactContext)
 
    return (
       <div className="container">
          <div className={`${styles.headerSection}`}>
             <h1 className="title2">Contatos</h1>
-            <button className={`${styles.btn} btn grey`}><FiPlus/></button>
+            <button onClick={() => setisOpenAdd(true)} className={`${styles.btn} btn grey`}><FiPlus/></button>
          </div>
          <ul className={`${styles.section} container`}>
-            {contacts !== undefined && contacts !== 0 ? (
-               contacts.map((item) => <ContactCard key={item.id} post={item} />)
+            {contactList !== undefined && contactList !== 0 ? (
+               contactList.map((item) => <ContactCard key={item.id} contact={item} />)
                ) : (
                <h3>Você não tem nenhuma contato em sua lista</h3>
             )}

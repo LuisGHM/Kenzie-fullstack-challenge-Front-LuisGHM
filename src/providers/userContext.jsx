@@ -8,6 +8,7 @@ export const UserContext = createContext({});
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState()
     const navigate = useNavigate();
+    const [contacts, setContacts] = useState();
 
     useEffect(() => {
         const getUser = async () => {
@@ -20,8 +21,9 @@ export const UserProvider = ({ children }) => {
                   Authorization: `Bearer ${token}`,
                 },
               });
+              setUser(data);
+              setContacts(data.contacts) 
               navigate("/home");
-              setUser(data); 
             } catch (error) {
               console.log("Token inspirado");
               setUser(null);
@@ -66,7 +68,7 @@ export const UserProvider = ({ children }) => {
 
     return (
         <UserContext.Provider
-          value={{ setUser, user, userLogin, logout, userRegister }}
+          value={{ setUser, user, userLogin, logout, userRegister, contacts, setContacts }}
         >
           {children}
         </UserContext.Provider>

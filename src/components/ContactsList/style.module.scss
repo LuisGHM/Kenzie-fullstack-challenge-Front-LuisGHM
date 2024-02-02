@@ -17,5 +17,8 @@
 
 .section{
     background: #c4d8e7;
-    border-radius: 10px; 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
 }
