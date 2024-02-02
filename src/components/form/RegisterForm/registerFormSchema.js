@@ -11,5 +11,5 @@ export const registerFormSchema = z.object({
       .regex(/[a-z]+/, "É necessario conter pelo menos uma letra minúscula")
       .regex(/[0-9]+/, "É necessario conter pelo menos um númeor")
       .regex(/[!@#$%^&*()_+{}\[\]:;<>,.?~\-]+/, "É necessario conter pelo menos um caractere especial"),
-      telephone: z.string().min(1, "O telefone é obrigatório")
+      telephone: z.string().min(1, "O telefone é obrigatório").min(8, "O telefone deve ter pelo menos 8 caracteres").max(15, "O telefone deve ter no máximo 15 caracteres").regex(/^\d+$/, "O telefone deve conter apenas números")
 })
