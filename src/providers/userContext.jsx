@@ -45,6 +45,8 @@ export const UserProvider = ({ children }) => {
         } catch (error) {
             if (error.response?.data.message === "Invalid email or password") {
                 toast.error("Senha ou email ivalidos");
+            } else if (error.response?.data.message ==="Client not found") {
+              toast.error("Senha ou email ivalidos");
             }
         }
     }
