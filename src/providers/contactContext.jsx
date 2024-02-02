@@ -52,6 +52,8 @@ export const ContactProvider = ({ children }) => {
           toast.error("um contato com esse email já existe");
         } else if (error.response?.data.message === "A contact with this telephone already exists") {
           toast.error("Um contato com esse telefone já existe");
+        } else if (error.response?.data.message[0] === "email must be an email") {
+          toast.error("Você deve informar um e-mail valido");
         }
       }
      });

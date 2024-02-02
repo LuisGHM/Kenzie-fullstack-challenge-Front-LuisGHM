@@ -20,7 +20,7 @@ export const AddContactForm = () => {
     return(
         <form className={"formContainer"} onSubmit={handleSubmit(submit)}>
             <Input className={`input`} asside={true} type="text" label={"Nome"} placeholder="Digite aqui o nome do contato"  {...register("name")} error={errors.name}/>
-            <Input className={`input`} asside={true} type="text" label={"e-mail"} placeholder="Digite aqui o e-mail do contato"  {...register("email")} error={errors.email}/>
+            <Input className={`input`} asside={true} type="email" label={"e-mail"} placeholder="Digite aqui o e-mail do contato"  {...register("email")} error={errors.email}/>
             <Input className={`input`} asside={true} type="text" label={"telefone"} placeholder="Digite aqui o telefone do contato"  {...register("telephone")} error={errors.telephone}/>
             <button type="submit" className={`btn`}>Cadastar Contato</button>
         </form>
